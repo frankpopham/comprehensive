@@ -1,12 +1,4 @@
----
-title: "Does comprehensive education reduce health inequalities?"
-site: bookdown::bookdown_site
-output: bookdown::word_document2
-bibliography: [ref.bib]
-csl: social-science-and-medicine.csl
-link-citations: yes
-version: 1
----
+
 
 ```{r setup, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = FALSE, include=FALSE, cache=FALSE)
@@ -25,41 +17,6 @@ options(scipen=999)
 
 ```
 
-*Authors:*
-
-Frank Popham (corresponding author) f.popham\@ed.ac.uk
-
-Cristina Iannelli: c.lannelli\@ed.ac.uk
-
-Moray House School of Education and Sport,\
-The University of Edinburgh,\
-Holyrood Campus, Edinburgh, UK, EH8 8AQ
-
-*Funding:* Economic and Social Research Council (ESRC Grant Reference ES/P009301/1). The funder had no role in the study, the writing of the article, or the decision to submit it for publication.
-
-*CRediT author statement:*
-
-**FP** Conceptualization, Methodology, Validation, Formal Analysis, Writing.
-
-**CI** Conceptualization, Methodology, Writing, Supervision, Funding acquisition.
-
-*Conflicts of interest:* None
-
-*Code and data availability:* 
-
-Code to replicate the analysis and the paper is available at <https://github.com/frankpopham/comprehensive>. The data itself is available to researchers from the UK data archive; we are not permitted to directly share the data but details of datasets used are in the code.
-
-*Keywords:* Health inequality, Education policy, Streaming, Comprehensive schooling
-
-\newpage
-
-### Abstract  {#Abstract .unnumbered}
-
-(300 words max, 259)
-
-Countries vary in the way in which they organize their secondary school system and allocate students within it. Some countries have strong differentiations between schools and curricula while others have adopted comprehensive systems in which students, irrespective of their ability and previous school performance, are taught in the same type of school.  Equalizing educational opportunities is an argument for a comprehensive school system. Given that education is an important social determinant of health, it is hypothesised that a more equitable comprehensive system could reduce health inequalities in adulthood. To test this hypothesis, we exploited the change from a largely selective to a largely comprehensive system that occurred in the UK from the mid-1960s onwards and compare pupils in the same birth cohorts (one born in 1958 and one in 1970) who attended either system. We studied physical and mental health, health behaviours and life satisfaction in middle age as outcomes. Inverse probability weighting was used to control confounding by socio-economic and education background, and ability test score taken prior to secondary school entry. Multiple imputation and inverse probability weighting were used to adjust for missing data and attrition, respectively. We studied relative and absolute health inequalities using the concentration index with social class and achieved education as our measures of social-economic stratification. We did not find consistent evidence that health inequalities were smaller under the comprehensive compared to the selective system and results were not substantially different in sensitivity analysis. Our study adds to the sparse but growing literature that assesses the impact of social policy on health inequalities.
-
-\newpage
 
 
 ```{r packages}
@@ -1858,49 +1815,7 @@ ggplot(df, aes(x=Cog, y=estimate, colour= System, ymin=conf.low, ymax=conf.high)
   
 ```
 
-<!--chapter:end:index.Rmd-->
 
-# Introduction {#Introduction .unnumbered}
-
-Despite growing life expectancy witnessed in the last decades, in many western countries, socio-economic inequalities in health persist [@Mackenbach2012] . A voluminous body of work describing social and economic determinants of health inequalities exists, but much less is known about the impact of social policies, and specifically educational reforms, on health inequalities [@beckfield2009; @östergren2017]. Countries vary in the way in which they organize their secondary school system and allocate students within it. Some countries separate students between tracks, academic and vocational orientated schools, while others teach all students of all abilities in the same comprehensive schools, although they may stream by ability within schools. The equality impacts of the different systems are debated [@Chmielewski2014].
-
-The purpose of this paper is to examine whether the introduction of comprehensive secondary education, using the example of Britain, has led to any change in health inequalities measured by a variety of both objective and subjective indicators. We might expect a change to a theoretically more equitable education system to reduce health inequalities in a number of ways: firstly, by more equitably distributing knowledge that reduces inequity in health literacy and ultimately health; secondly, and possibly more importantly, by reducing lifecourse inequality in other social determinants of health such as occupation, income, wealth, housing and so on that are, in part, affected by educational attainment; thirdly, through increased social cohesion that increased equality may bring.
-
-Below we explore the theories and evidence on why a change from a selective to a comprehensive school system might impact social inequalities, and thus inequalities in health.
-
-### The relation between education institutions and social inequalities {#The-theory-of-relation-between-education-institutions-and-social-inequalities .unnumbered}
-
-Theories of social reproduction have long argued that the organization, selection procedures and content of the school system are very important factors in the explanation of the unequal distribution of education and labour market outcomes. In particular, the school factor which has most strongly been accused of reproducing social inequalities is track allocation; that is the allocation of pupils into different schools, or programmes of study within schools, based on student ability or performance. Tracks have different status and curriculum content: usually academic schools/programmes have higher status and lead to more advanced studies and vocational schools/programmes have lower status, a narrower curriculum and limited or no opportunity for further studies. A large number of sociological and educational studies have been devoted to analysing the role of tracking and its effect in widening, reducing or simply maintaining existing inequalities among students from different social classes [@gamoran1989; @gamoran1996; @kerckhoff1986; @oakes1985]. They generally found that low tracks restrain the educational and socio-economic attainments of disadvantaged pupils with long-term negative consequences on individuals' lives.
-
-After the 1944 Education Act that provided for universal free secondary education, Britain had a tracked secondary school system - the tripartite system- with its distinction between grammar, technical and secondary modern school. Pupils were separated into different schools according to their ability which was determined by the results of the 11-plus exam at the end of primary school: those who achieved the best exam results gained access to grammar school, which taught a highly academic curriculum; the others attended secondary modern and, a small minority, technical schools which offered a vocationally-oriented curriculum. There were also a number of independent, fee-paying schools which selected their pupils on the basis of entry tests and financial criteria.
-
-Critics of the tripartite system argued it reproduced societal inequalities since selection based on the 11-plus discriminated against children from disadvantage socio-economic backgrounds and resulted in their over-representation in the secondary modern schools. Indeed, the move to a comprehensive system from the mid-1960s onwards was partly advocated by the aspiration to provide more equal educational opportunities. Among the purposes of the comprehensive re-organisation of the education system were the elimination of pupils' allocation to schools through selection by ability, a reduction of between-school variation in children's intake (favouring a more diverse social mix in schools), an increase in access to educational certifications, and a reduction of social inequalities in attainment [@mcpherson1987; @kerckhoff1996].
-
-### The empirical evidence on comprehensive education and inequalities {#The-empirical-evidence-on-comprehensive-education-and-inequalities .unnumbered}
-
-The issue of whether comprehensive education systems are more equitable than selective education systems has been prominent in the education and social mobility literature. Some scholars have tried to answer this question by comparing countries with different degrees of differentiation of their education systems [@gorard2004; @dupriez2006; @vandewerfhorst2010; @burger2016], while others have concentrated on within-country comparisons to analyse changes in national education systems over time [@heath1990; @kerckhoff1996; @iannelli2007; @boliver2011]. In general, results from the international comparisons suggest that comprehensive systems (as those in the Scandinavian countries), where there is no selection by ability and all pupils attend the same type of schools, are more egalitarian than differentiated school systems (such as those in Germany, Austria and Switzerland), which are characterised by sorting pupils according to their ability in different school types or tracks.
-
-Interestingly, research based on within-country comparisons has mostly concluded that the comprehensive reorganization of national education systems had little impact on reducing social inequalities in attainment and in promoting social mobility. Atkinson et al[-@atkinson2006] found that, overall, pupils in selective Local Education Authorities (LEAs) did not achieve better educational outcomes than similar pupils in non-selective LEAs. This is because while children educated in grammar schools outperformed similar children educated in comprehensive schools, non-grammar-educated children in the selective system, which mostly gathered children from less advantaged social backgrounds, underperformed them.
-
-Examining social mobility chances in Britain, Boliver and Swift [-@boliver2011]found that the selective system was no better than the comprehensive system in improving the chances of children from disadvantaged social origins of being upwardly mobile. In Scotland, where the comprehensive reorganisation of the education system was more complete than in England, Iannelli and Paterson [-@iannelli2007] compared four cohorts born between 1937 and 1975 and found no evidence that the introduction of comprehensive education in Scotland was associated with improved social mobility. Conversely, Burgess, Dickson and MacMillan [-@burgess2019] analysed earnings inequality between people who attended the selective and the comprehensive system and found that individuals who grew up in areas operating a selective school system had a more unequal earnings distribution.
-
-Much less explored is the issue of whether comprehensive education may lead to benefits in life domains other than education and labour market outcomes. Another social impact that comprehensive schooling has been hypothesised to have is to improve social cohesion. To test these studies have analysed the relationship between having attended comprehensive schools and individuals' civic values. As for the above-mentioned studies, cross-country comparative and single-country research reach different conclusions. While comparative research observed a positive relationship, with people who attended comprehensive systems showing more civic-minded views [@vandewerfhorst2007] , single-country analysis of longitudinal data found that those who attended selective schools tended to be more liberal, tolerant and engaged in politics than people who attended comprehensive schools [@paterson2012]. For health inequalities the evidence is equally sparse, a recent cross-national study found that adult inequality by educational achievement in self rated health was greater in European countries with more school level tracking [@Delaruelle2019].
-
-### Reasons why comprehensive education might reduce health inequalities {#Theory-on-why-comprehensive-education-might-reduce-health-inequalities .unnumbered}
-
-Health literacy is routinely found to be associated with more education and thus is hypothesised as one reason for socio-economic inequalities in health outcomes . It is a multidimensional concept covering seeking, comprehending and actioning health knowledge as well as the ability and power to navigate the health system effectively [@beauchamp2015; @greenhalgh2015; @vanderheide2013] . Causal studies on the relationship between education and high literacy are mixed. For example, a UK natural experiment study using changes in compulsory school leaving age did not find a causal relationship between increased leaving age and health knowledge while a similarly designed Australian study found that some, but not all, knowledge informed health behaviours were improved by increasing the school leaving age [@johnston2015; @li_does_2015].
-
-A number of prominent theories of health inequalities predict that more equal distribution of the socio-economic determinants of health should lead to reduced health inequalities [@wilkinson2008; @towsend1990; @Phelan2010]. Fundamental theory offers an overarching theory for the persistence of health inequalities over time, place and generation. It argues that "individuals and groups deploy resources to avoid risks and adopt protective strategies. Key resources such as knowledge, money, power, prestige, and beneficial social connections can be used no matter what the risk and protective factors are in a given circumstance." [@Phelan2010, p29]. Formal education is one resource and a resource that, in part, other key resources depend on. Knowledge comes directly from education and indirectly from the learning capacity it might instil. Access to money, power and prestige are linked to occupational class and status commonly derived through obtaining educational qualifications. Thus a comprehensive school system, by improving the education and labour market outcomes of the most disadvantaged, may reduce health inequalities by narrowing the resource gap. Indeed, social mobility research in the UK has found that in the second half of the 20th century, absolute rates of mobility were high, meaning that a large number of working class children were upward mobile and entered professional and managerial occupations. This was mostly due to the expansion of professional occupations and of education participation which occurred in this period [@Goldthorpe_2004; @iannelli_social_2006]. Heller and colleagues found evidence that the changing occupational structure in the UK to more high status jobs had benefited population health in the 1990s compared to the 1970s [@heller2002]. On the other hand, and as already highlighted, research generally finds that relative social mobility did not greatly change after the switch to a largely comprehensive system. Evidence on the impact of relative social mobility on health inequalities is mixed with evidence of both a role in reducing and increasing health inequalities [@Boyle; @bartley_increasing_2007].
-
-As highlighted, improved social cohesion is theorised as having a possible impact of moving to a comprehensive system. In health Wilkinson and Pickett's income inequality theory hypothesises "that more equal societies were healthier because they were more cohesive and enjoyed better social relations". They argue that the main biological mechanism by which social cohesion improves health is through the lowering of stress, as chronic stress can impair health. For rich countries, they argue that it is the distribution rather than the average level of socio-economic resources that is important for health [@pickett_income_2015]. So if the comprehensive system does improve social cohesion, as theorised, this could be another route through which it reduces health inequalities.
-
-### The current study {#The-current-study .unnumbered}
-
-One limitation of cross-country comparative studies is the difficulty in establishing causal relations between institutional features of national education systems and inequalities of outcomes. This is because national institutions and policies are embedded in and interact with broader socio-cultural contexts which greatly differ among countries. Hence we follow other researchers [@boliver2011; @paterson2012] and focus on institutional changes within one country, Britain. We exploit the fact that the old selective and the new comprehensive systems co-existed (and continue to co-exist in parts of England) and this allowed us to examine the health outcomes of young people who experienced the two systems at the same time, thus keeping constant other period and contextual effects.
-
-Our paper aims to provide more evidence on whether the change to a more equity focus comprehensive education system reduced health inequalities by asking: did the introduction of a comprehensive education system in Britain reduce health inequalities?
-
-<!--chapter:end:01-intro.Rmd-->
 
 ```{r 1958 variables, eval=FALSE}
 
@@ -3614,67 +3529,7 @@ gc()
 
 
 
-<!--chapter:end:datasetup.Rmd-->
 
-# Methods {#Methods .unnumbered}
-
-A protocol for the study was registered before analysis of the outcome data was undertaken (<https://osf.io/vt46r> ).
-
-### Design {#Design .unnumbered}
-
-To obtain an average population effect of school system on health and health inequalities we contrasted the outcomes between the Comprehensive and Selective systems using observational data. Given the lack of randomisation in school system allocation we controlled for individuals pre secondary school characteristics associated with both school type and later health including sex, ethnicity, region of residence, cognitive ability and childhood socio-economic circumstances. We did this by modelling school system probability as a function of the confounders. From these probabilities we calculated inverse probability weights to try to balance the confounders across the two school systems [@Hernan]. In our main analysis we used Superlearner to select the best balancing weights from three methods of fitting the models of school system (logistic regression, generalized additive model and generalized linear model via penalized maximum likelihood) [@Pirracchio2015]. In sensitivity analysis we also separately modelled school system as a function of confounders using a generalized boosted model and entropy balancing.
-
-### Data {#Data .unnumbered}
-
-We used data from two UK longitudinal birth cohorts that have surveyed one week of births from 1958 and 1970 regularly throughout their lives. The 1958 cohort is known as the National Child Development Study and the 1970 as the British Birth Cohort Study, for ease we refer to them as the 1958 and 1970 cohorts respectively.
-
-We used data from both cohorts because while the first cohort went to school during the transition from a selective to a comprehensive system, the second cohort experienced a more 'mature' comprehensive system. Indeed, in Scotland and Wales, by 1980 almost all pupils in state-funded schools were attending schools that were comprehensive while in England some areas retained a selective system of secondary school [@croxford2004] . This allowed us to test the robustness of our results and to reach more confident conclusions.
-
-Both cohorts are described in detail elsewhere [@power2006] [@elliott2006]. The cohorts are regularly surveyed as were their parents and schools in childhood. Both cohorts added a small number of immigrants to the UK, who were born in the same week outside the UK, by tracing through their schools [@power2006] [@elliott2006] but we exclude this group as their school age data is often missing. Additionally we exclude the small number of respondents born in Northern Ireland as they were not followed into adulthood. So our sample in both cohorts was those born, alive and living in Great Britain at the survey wave just before secondary school (aged 10 in 1970 and aged 11 in 1958) .
-
-#### Exposure {#Expsoure .unnumbered}
-
-Our exposure is the selective system (grammar, private and secondary modern schools) versus the comprehensive system. In the 1958 and 1970s study school type was reported at age 16 (end of compulsory secondary schooling) rather than age 11 (start of secondary schooling). Especially in the 1958 cohort, schools may have converted to being a comprehensive after the cohort member started secondary school. As the 1958 cohort reports the year the school changed to a comprehensive we conducted sensitivity analysis using school type at age 11 in this cohort. In the 1970 cohort there was a teachers' strike during the age 16 wave of data collection effecting the level of response, so the cohort was asked about secondary school type at age 42 as well to supplement the age 16 data.
-
-#### Outcome measures {#Outcome-measures .unnumbered}
-
-##### Health and wellbeing {#Health-and-wellbeing .unnumbered}
-
-Our six health and wellbeing outcomes are body mass index (BMI), smoking behaviour, self rated health, wellbeing measured using the Warwick-Edinburgh Mental Wellbeing Scale (WEMWBS) and life satisfaction (past and future).They were all collected when cohort members were aged 42 with the exception of WEMWBS which was collected at age 50 for the 1958 cohort.
-
-We choose two health behaviours as it has been hypothesised that fundamental theory will apply more strongly for preventable causes of disease. Both the health impact of excess body fat and smoking have been known for some time. Self rated general health is an established measure of general health that predicts mortality, although there remains debate about what exactly it captures and how this varies by context [@Jylha2009] . The WEMWBS scale captures the following aspects of mental wellbeing in a single construct: "hedonic and eudaimonic aspects, positive affect, satisfying interpersonal relationships and positive functioning" [@Tennant2007]. Life satisfaction is a widely used evaluative measure of well-being, and is used by government as one measure of national well-being in England and Wales [@Tinkler2011]. BMI at baseline will be used as a negative control in sensitivity analysis [@lipsitch2010]. We used outcome data from cross-cohort harmonised datasets designed for comparative analysis of our cohorts when this was available [@wood2019] [@hardy2019].
-
-##### Social class {#Social-class .unnumbered}
-
-Parental social class was measured when cohort members were aged 10 or 11. We refer to this as origin social class. Cohort members' adult social class (destination social class) was measured at age 42. As our measure of social class we used the UK's National Statistics Socio-economic classification of occupations (NS-SEC) [@ons2016] . We used the NS-SEC codes derived for comparative analysis by a previous cross-cohort project [@morris2012]. As this did not have age 42 NS-SEC coding for the 1970 project we used NS-SEC coding provided by the 1970 study team instead. Our measure of inequality requires an ordered measure of social class . We used the three category ordered version of NS-SEC [@ons2016], and further split the most advantaged category into two. Thus, we use the following four category ordered classes : higher managerial and professional occupations, lower managerial and professional occupations , intermediate occupations, routine and manual occupations [@duta2020] .
-
-##### Education {#Education .unnumbered}
-
-Using education files created for comparative analysis across our cohorts we included the age of leaving full time education and highest qualification by age 38 as outcomes and potential mediators of any relationship between school system and health inequality. Those with highest qualifications of 1--4 O-level passes, NVQ 2 or below (including no qualifications) were coded as "below high lower secondary". "High lower secondary" included those with the highest qualifications of 5+ O-level passes or 1 A-level pass or NVQ 3. "Higher secondary or lower tertiary" covered those with tertiary level sub-degree qualifications, NVQ 4 or 2+ A-level passes. Finally those with a degree or NVQ 5 and above were coded "higher tertiary" [@Bourne2018].
-
-#### Confounders {#Confounders .unnumbered}
-
-We choose factors at baseline that could influence the school system attended and later health. These were region of residence, cognitive ability, sex, ethnicity, origin social class , parental education and interest in their child's education (reported by teachers), and whether the pupil attended a state funded primary school. Table 1 lists the categories of these confounders. Region of residence recorded at baseline used standard region classifications in operation at the time and varied slightly between the cohorts. Ethnicity was captured at age 42 in the 1958 cohort as it was not well covered in childhood surveys, and at age 5 in the 1970 cohort. Low prevalence of some ethnicities in both cohorts meant quite broad categories were used. In the selective system the type of school one attended (academic or vocational focused) was based on an entrance exam taken at the end of primary schooling. While not the test themselves the 1958 and 1970 cohorts took similar cognitive ability tests at age 11 and 10 respectively that correlate highly with the school admission tests [@shepherd2012; @parsons2014]. The 1958 cohort test was the General Ability teacher administered test that consisted of 40 verbal and 40 non-verbal questions [@shepherd2012]. Pupils' verbal and non-verbal abilities were tested in the 1970 cohort through the use of four sections of the British Ability Scores test. Again the test was teacher administered [@parsons2014]. For both cohorts we standardised the scales to have a mean of 100 and standard deviation of 15. Parental education was based on the highest of either parents' age at leaving school. From a cross-cohort dataset derived for comparative analysis we included primary schools' rating of parents' interest in their child's education at age 7 for the 1958 cohort and age 10 for the 1970 cohort [@wood2019]. Finally, parents were asked when their child was aged 11 in the 1958 cohort and age 10 in the 1970 cohort what age they thought their child would leave school and if they hoped they would stay in education post school.
-
-#### Analysis {#Analysis .unnumbered}
-
-Our main outcome measure is social class inequalities in the health outcomes. As our measure of inequality we used the concentration index [@Erreygers2011]. This measures deviation from the line of equality where the ranked share of socio-economic groups in the population have equal share of the health outcome. It is related to the slope and relative index of inequality also commonly used in studies of health inequalities [@kjellsson2015]. Three measures will be studied: absolute inequality, and "attainment" and "shortfall" relative inequality. There are two measures of relative inequality as the results can vary depending on whether the outcome is coded as positive (attainment) or negative (shortfall) health [@Sogaard2019].
-
-Regression was used to calculate the concentration index as is commonly done. The independent variable is the socio-economic measure we are using to assess inequality. The socio-economic measure is ranked from the most disadvantaged to the most advantaged with each group coded at the mid-point of their ranked cumulative proportion [@ODonnell2016]. For example if our socio-economic measure is social class with five ranked class groups of equal size, the groups would be coded from disadvantaged to advantaged as 0.1, 0.3, 0.5, 0.7, 0.9.
-
-The dependent variable is the health outcome (or other outcome of interest). First, each of our outcomes was recoded as both positive (attainment), from worse to best, and negative (shortfall), best to worse. This is because the relative index can vary depending on whether positive or negative health is studied. Each outcome was then scaled to 0 to 1 to make the concentration index independent (scale invariant) of the different measurement scales of the outcomes [@Erreygers2011]. For the relative concentration indices the outcome is then multiplied by twice the variance of the independent variable (i.e. the recoded socio-economic variable described in the last paragraph). It is then divided by the mean of the outcome. [@ODonnell2016]. For the absolute measure, the relative dependent variable is multiplied by 4 times the mean of the outcome [@ODonnell2016].
-
-To calculate the concentration indices the dependent and independent variables described above are entered as continuous variables in a linear regression. To assess whether the index varies by school system we interacted the independent variable with a dummy variable for school system [@ODonnell2016].
-
-All calculations included the inverse probability weights to control for confounding.
-
-#### Missing data {#Missing-data .unnumbered}
-
-As with any cohort study missing data due to attrition (non-response to survey) and item non-response are common in both cohorts. We used a two stage MI / IPW approach to address it [@Seaman2012]. Details in Supplement 1.
-
-#### Software {#Software-and-code .unnumbered}
-
-For the analysis we used R [@r] with Rstudio [@rstudio2020]. We made use of a number of user written packages for R, these are listed in Supplement 9. 
 
 ```{r imputation, eval=FALSE}
 # 1958 ####
@@ -4290,13 +4145,7 @@ gc()
 
 
 
-<!--chapter:end:results.Rmd-->
 
-# Results {#Results .unnumbered}
-
-### Baseline {#Baseline .unnumbered}
-
-Table \@ref(tab:Table1) shows confounder balance before and after adjustment using the inverse probability weights. Just over half of the 1958 cohort were in comprehensive schools at age 16 compared to 83% in the 1970 cohort. Before adjustment on average those attending selective system schools were from more advantaged backgrounds and scored higher on the cognitive ability tests. As illustrated in Figure \@ref(fig:Figure1), good balance was achieved across the confounders in both cohorts after adjustment. In supplement 2 we illustrate good balance after adjustment in the distribution of cognitive ability (the continuous confounder). In addition Table \@ref(tab:Table1) shows that the adjusted counterfactual populations - imagining everyone went to school under a comprehensive system or a selective system - in both cohorts closely match the overall population in terms of size and variable distribution.
 
 ```{r Table1, eval=TRUE, echo=FALSE, include=TRUE, tab.cap="Confounder balance before and after weighting"}
 
@@ -4314,9 +4163,7 @@ readRDS("superfig1.RDS") %>%
 include_graphics("Figure1.png")
 ```
 
-### Outcomes {#Outcomes .unnumbered}
 
-There are clear differences across the cohorts in the mean of some outcomes - rises in age leaving full time education, increases in qualification levels, increases in BMI and future life satisfaction, and reductions in smoking - as might be expected. For example there were fewer smokers at age 42 in 1970 from both the comprehensive system (27.3% (95% CI 26% - 28.6%) and the selective system (25.7% (23.7% - 27.6%)) compared to 1958 (31.2% (30% - 32.5%) and 30.9% (29.4% - 32.3%) respectively) as shown in Figure \@ref(fig:Figure2) that illustrates the means of outcomes under each system after confounder adjustment. Although general health seems to have reduced in the 1970 cohort, this is perhaps the least comparable variable due to differences in response scale in the original questions.
 
 ```{r Figure2, include=TRUE, echo=FALSE, fig.cap="Mean outcomes by school system and cohort"}
 readRDS("superfig2.RDS") %>%
@@ -4324,7 +4171,7 @@ readRDS("superfig2.RDS") %>%
 include_graphics("Figure2.png")
 ```
 
-Comparing within cohorts Figure \@ref(fig:Figure2) shows that in general there was not a clear difference between school systems for our health and wellbeing outcomes. For example, while the rate of smoking was slightly lower in both cohorts under the selective system compared to the comprehensive system (-0.4% (-2.4% - 1.6%) in 1958 and -1.7% (-4.1% - 0.7%) in 1970, the confidence intervals for the differences were wide. There were clear differences in the two education outcomes under each system. For example, average age at leaving full-time education was higher in the selective system in both cohorts. In 1958 the average age of leaving full-time education under the comprehensive system was 16.8 (16.8 - 16.9) while under the selective system it was 17.1 (17 - 17.1), a difference of 0.23 (0.16 - 0.30) years, just under 3 months. In 1970 the average age of leaving full-time education under the comprehensive system was 17.4 (17.3 - 17.4) while under the selective system it was 17.8 (17.7 - 17.9), a difference of 0.4 (0.27 - 0.52) years, just under 5 months.
+
 
 ```{r Figure3, include=TRUE, echo=FALSE, fig.cap="Origin class inequalities in outcomes by school system and cohort"}
 readRDS("superfig3a.RDS") %>%
@@ -4332,21 +4179,7 @@ readRDS("superfig3a.RDS") %>%
 include_graphics("Figure3.png")
 ```
 
-A similar picture is observed for inequality in outcomes as that for mean outcomes. Figure \@ref(fig:Figure3) shows inequality in the comprehensive system in each outcome by our three measures - i.e. absolute inequality, and shortfall and attainment relative inequality. Additionally it shows the difference in inequality under the selective system compared to the comprehensive system. It reports inequality by class of origin (results are similar for class of destination see supplement 3). Overall inequality is not clearly different in the selective system compared to comprehensive system for our health and wellbeing outcomes. For example, the result for mental wellbeing shows inequalities by social origin in the comprehensive school, meaning that people from more disadvantaged social origins tend to have poorer mental wellbeing than people from more advantaged social classes. The results are invariant to whether we consider positive mental wellbeing (relative attainment) or negative mental wellbeing (relative shortfall). Absolute results are presented as attainment only as by definition they are invariant (apart from the sign switching to negative for shortfall). However, this pattern is not greatly different under the selective system. Similar results for general health, BMI, current smoking and present life satisfaction. Inequalities in future llife satisfaction are less apparent. For both the education outcomes of age of leaving full-time education and highest education there are clear inequalities - earlier age of leaving and lower qualifications in the more disadvantaged - and the inequalities are generally greater in the selective system. The only exception is the relative attainment measure for both highest qualification and age leaving full-time education in the 1970 cohort where the selective system's difference to the comprehensive system is less clear as the confidence intervals cross zero.
 
-```{r Figure4, include=TRUE, echo=FALSE, fig.cap="Education inequalities (age left education) in outcomes and social class of destination by school system and cohort"}
-readRDS("superfig4a.RDS") %>%
-  ggsave("Figure4.png", plot=., width=18, height=25, units="cm")
-include_graphics("Figure4.png")
-```
-
-### Education inequalities in health outcomes {#Education-inequalities-in-health-outcomes .unnumbered}
-
-So far we have used social class as our measure of stratification. We also explored inequalities with education as the measure of stratification. While we hypothesised that the comprehensive system might influence health inequalities indirectly through occupational social class and associated economic advantage, we also hypothesised that it might have more direct effects on health inequalities , for example through the distribution of health literacy. Thus, if it had a direct effect through education we might capture this better when using education as a measure of stratification. It is also valuable to assess our outcomes using education as the measure of stratification because inequalities in health are often studied using education rather than social class. Specifically we report inequalities in health outcomes by the age left full-time education in Figure \@ref(fig:Figure4) which replaces social class as the stratification variable with age left full-time education. Overall there is little evidence that inequality by education in the health and wellbeing outcomes is different in the selective system compared to the comprehensive, as was the case for social class stratification. The one exception being inequality in BMI that seemed to be greater in the 1958 cohort. Figure \@ref(fig:Figure4) additionally shows education inequality with social class of destination as an outcome. Here there is consistent evidence that social class advantage (attainment inequality) and social class disadvantage (shortfall inequality) are more concentrated by age left education in the selective as opposed to the comprehensive system. Results are similar using highest qualification achieved (see supplement 3).
-
-#### Exploratory analysis {#Exploratory-analysis .unnumbered}
-
-We undertook exploratory analysis to assess why the mean and inequality might be greater in the selective system for education but not health outcomes. The main feature of the selective system is that entry to either a vocational or academic focused secondary school is based on a cognitive ability test taken at the end of primary school. While not the actual test we do have similar cognitive ability tests in our data so it is informative to compare outcomes by childhood cognitive ability and school system. The results for the 1958 cohort can be seen in Figure \@ref(fig:Figure5) We binned cognitive ability into five point bins (except at the margins where cases were most sparse) and calculated the IPW adjusted mean of the outcome for each bin by school system. Apart from perhaps the life satisfaction outcomes the general trend in Figure \@ref(fig:Figure5) is that increasing cognitive ability is associated (no causal claim being made) with better outcomes as previous research suggests. However, only for the education outcomes do we see a difference emerge by system and cognitive ability. Although we do not know the entry score needed to enter an academic focused secondary school previous research on the 1958 cohort showed that the selective system saw increases in the probability of attending an academic focused school (Grammar schools) from around the mid-point of distribution of the cognitive ability test, with the probability rising as test score increases [@pastore2019]. It is around this point that we see in our diagram those in the selective system diverging from the comprehensive system in terms of age leaving education and highest qualification achieved. This suggests that schooling for those with higher cognitive ability scores is driving these education outcome differences between the systems. The results for the 1970 cohort are similar (see supplement 3).
 
 ```{r Figure5, include=TRUE, echo=FALSE, fig.cap="Mean of outcomes by cognitive ability and  school system 1958 cohort"}
 readRDS("superfig6a.RDS") %>%
@@ -4354,86 +4187,9 @@ readRDS("superfig6a.RDS") %>%
 include_graphics("Figure5.png")
 ```
 
-### Sensitivity analysis {#Sensitivity-analysis .unnumbered}
 
-Supplement 3 presents the results for the BMI at baseline as a negative control. It shows little evidence of any inequality by social class providing additional assurance that residual confounding may not be a large bias as BMI at baseline was not included in the confounder model.
 
-Supplement 4 shows the class results in Figures 2 and 3 but using imputed outcomes. Both show little change to the main analysis.
 
-In Supplement 5 we rerun the analysis with the inverse probability weights for adjusting confounding generated from a entropy balancing model that will achieve exact mean balance although it, as in this case, may do so with some observations having negative probabilities thus violating the positivity assumption that every observation should have a positive probability of receiving either of the "treatments". In any case the results are not that changed, this is also the case in Supplement 6 where we use a generalised boosted model for inverse probability weight generation.
-
-Supplement 7 shows that the pattern of results is not that changed when we exclude observations where the exposure was imputed.
-
-Supplement 8 shows the results by school type at age 11 for the 1958 cohort rather than their school type at age 16. Results are similar, perhaps the largest change being that inequality in age left education is not so clearly higher in the selective system.
-
-<!--chapter:end:03-results.Rmd-->
-
-# Discussion {#Discussion .unnumbered}
-
-### Main results {#Main-results .unnumbered}
-
-In a observational study of two British birth cohorts followed to middle age we found little evidence that health and wellbeing outcomes were different in the comprehensive compared to the selective school system both in terms of average outcomes and inequality in outcomes. This was despite there being differences in our education outcomes (on average slightly higher in the selective system) and inequality (lower in the comprehensive system) between the systems. We had originally hypothesized these differences in education outcomes could lead to health differences between systems in at least three ways. Firstly, through the direst effect of improvements in education on health literacy. As shown in Figure \@ref(fig:Figure2) average education outcomes were slightly better in the selective system. Hence the idea that comprehensive system brought about changes in health literacy through improved average education is not well supported. Previous studies of education outcomes have tended to find that in the selective system average education outcomes are better for those attending academically focussed schools compared to similar students in comprehensive schools but that comprehensive schools perform better for pupils who would have gone to vocationally focused schools in the selective system, so at the population level there is a small or no overall effect [@atkinson2006]. Our exploratory analysis assessing the interaction between cognitive ability test score and system suggested, tentatively, that system differences in education emerged because of higher outcomes in those with higher ability scores in the selective system, who were most likely to attend an academic focused school (Figure \@ref(fig:Figure5)). Inequalities in education outcomes were reduced under the comprehensive system we found (see Figure \@ref(fig:Figure3)) but these seemed not to translate into reduced health inequalities. Similarly, recent UK work comparing outcomes in the selective system only for those who could have gone to an academic school based on having a cognitive ability score near the cut off but some of whom did not obtain a place found evidence of effects on education by school type but no effects on health [@clark2013; @pastore2019; @clark2013; @Butler2020]. When we replaced social class with education as our stratification measure while there was evidence of BMI inequalities being lower in one cohort, across the other health outcomes little difference between the school systems was observed suggesting that the results for social class stratification broadly held when using a direct measure of education.
-
-Our second possible mechanism through which the comprehensive system might have reduced health inequalities was by reducing inequalities in other social determinants of health. While we found in Figure \@ref(fig:Figure4) destination social class inequalities by education were higher in the selective system this appeared not to translate into an effect on health inequalities. The inequalities in destination social class by education were large even in the comprehensive system, so even though reduced compared to the selective system the reduction may have been too small to impact health inequalities.
-
-Our third mechanism, following the income inequality hypothesis, was the possibility that more equity in education and other social determinants of health would bring about greater social cohesion and thus improve population health and reduce health inequalities. While we observed reductions in inequality in education outcomes under the comprehensive system this did not seem to translate into reductions in health inequalities. More directly, previous UK research found that the change to the comprehensive system did not improve indicators of social cohesion [@paterson2012].
-
-Overall the equity impacts of a comprehensive system over a selective school system may be relatively minor. This is likely to be due to between-school and within-school differences which continue to exist in a comprehensive system, even though in a less visible way than in a selective system. There continue to be significant differentiation at the school level in the comprehensive system through geographical and socio-economic variation in catchment areas for example, as well as within-school differentiation of teaching tracking by ability groupings and curriculum.
-
-### Strengths and limitations {#Strengths-and-Limitations .unnumbered}
-
-Our study had a number of strengths including a clear aim of evaluating causal relationships [@hernán2018], pre-outcome registration of the analysis, use of representative data from two rich cohort studies, multiple imputation and weighting, a full range of measures of inequalities in health, a variety of outcomes and extensive sensitivity analysis.
-
-In an observational study when the exposure of interest is not randomised we need to be cognisant of the possibility of residual confounding and selection bias. In terms of residual confounding this is difficult to rule out, we did choose factors prior to secondary school such as region of residence, socio-economic background, parental education and aspirations for their child as well as the cognitive ability test scores that may impact whether they sought a particular school system (for example, seeking an academic school in the selective system). We were able to achieve good balance on these in our main propensity score and the two additional propensity score methods (one of which achieved "perfect" balance by design). We used the negative control of one of the outcomes (BMI) measured at the end of primary school. Despite not being included in the propensity score model it showed good balance as well. We did consider the alternative natural experiment design of a regression discontinuity as this has been used quite extensively to study differences between school types in the selective system using entrance test score (or proxy) as the forcing variable. We could then see if in the comprehensive system inequalities in health changed in the same way or not at the score level where students in the selective system straddled the vocational / academic school border. The disadvantage was this would give a local (for those at the border) average treatment effect rather covering the whole system (an average treatment effect). In order to understand our results we did essentially conduct the first stage of a regression discontinuity (Figure 5) [@cattaneo2019] , these results suggest that using this alternative design may have come to similar conclusions.
-
-Selection biases relates to how people are selected into the sample [@Hernan]. These include: volunteer bias - our samples were all births in one week with a high response rate; missing data bias- we used multiple imputation to mitigate this; and loss to follow-up - we used IPW to mitigate this as well as sensitivity analysis on multiple imputed outcomes.
-
-Measurement error could also bias our results. In the 1958 cohort some schools were transitioning to the comprehensive system and so we conducted sensitivity analysis of the results to changing when we assessed school type (at age 11 or 16). We also compared results in 1958 to 1970 when the comprehensive system was more established.
-
-#### Conclusion {#Conclusion .unnumbered}
-
-in summary we found no consistent impact of the introduction of a comprehensive school system in Britain on adult health and health inequalities despite, in theory at least, the comprehensive system being more equitable.
-
-<!--chapter:end:04-discussion.Rmd-->
-
-# References {#References .unnumbered}
-
-::: {#refs}
-:::
-
-<!--chapter:end:05-references.Rmd-->
-
-# Supplement 1 {#Supplement .unnumbered}
-
-Firstly, we used multiple imputation (MI) to impute missing data on exposure and confounders. Secondly, we used inverse probability weights to account for the following post intervention: missing outcome data, death and emigration. We derived the IPW from models of the propensity of having missing data on the outcome or not as a function of the exposure and confounders. These weights are then multiplied by those for confounding. Our multiple imputation used chained equations (van Buuren and Groothuis-Oudshoorn, 2011) with the imputation model featuring the outcomes, exposure, confounders, and additional auxiliary variables (see Table S1_1) that are predictive of both missingness and the main variable (in our case the exposure) being imputed (Leyrat et al. 2017; Silverwood et al. 2020). We checked the convergence of the model using 10 iterations. We used the rule of thumb that the number of imputations should be at least the percentage of missingness (68 and 72 imputations for 1958 and 1970 cohort respectively) (White et al. 2011). As outlined in Tables S1_2 and S1_3 in missingness was less for each individual variable and overall the imputations did not greatly change variable distribution. We conducted separate imputations for each cohort. In line with recommendations all analysis was conducted on each imputation, with the results for the outcome models combined using Rubin's rules (Leyrat et al. 2017).
-
-Leyrat, C., Seaman, S.R., White, I.R., Douglas, I., Smeeth, L., Kim, J., Resche-Rigon, M., Carpenter, J.R., Williamson, E.J., 2017. Propensity score analysis with partially observed covariates: How should multiple imputation be used? Statistical Methods in Medical Research 28, 3–19. https://doi.org/10.1177/0962280217713032
-
-Silverwood, R., Narayanan, M., Dodgeon, B., Ploubidis, G., 2020. Handling missing data in the National Child Development Study: User guide. UCL Centre for Longitudinal Studies, London, UK.
-
-White, I.R., Royston, P., Wood, A.M., 2011. Multiple imputation using chained equations: Issues and guidance for practice. Statistics in Medicine 30, 377–399.
-
-van Buuren, S.,  Groothuis-Oudshoorn, K. (2011). mice: Multivariate Imputation by Chained Equations in R. Journal of Statistical Software, 45(3), 1-67. URL https://www.jstatsoft.org/v45/i03/.
-
-*Table S1\_1 Auxiliary variables used in the multiple imputation*
-
-+--------------------------------------------------------+-------------------------------------------------------+
-| 1958                                                   | 1970                                                  |
-+:=======================================================+:======================================================+
-| Four cognitive ability scales at age 7 [@shepherd2012] | Four cognitive ability scales at age 5 [@parsons2014] |
-|                                                        |                                                       |
-| -   Southgate Group Reading Test                       | -   English Picture Vocabulary Test                   |
-|                                                        |                                                       |
-| -   Copying designs                                    | -   Schonell Reading Test                             |
-|                                                        |                                                       |
-| -   Drawing a man test                                 | -   Copying designs                                   |
-|                                                        |                                                       |
-| -   Problem arithmetic test                            | -   Human Figure Drawing Test                         |
-|                                                        |                                                       |
-| Region of residence at birth and age 7                 | Region of residence at birth and age 5                |
-|                                                        |                                                       |
-| Social class of parent at birth and age 7              | Social class of parent at birth and age 5             |
-+--------------------------------------------------------+-------------------------------------------------------+
 
 ```{r s1_2, eval=TRUE, include=TRUE, echo=FALSE, tab.cap="Distribution of confounders and exposure before and after imputation 1958 cohort"}
 
@@ -4447,11 +4203,7 @@ s1_3 <- readRDS("misstable1970.RDS")
 knit_print(s1_3)
 ```
 
-<!--chapter:end:supplement1.Rmd-->
 
-# Supplement 2 {#Supplement-2 .unnumbered}
-
-### Distribution of cognitive ability test {#Distribution-of-cognitive-ability-test .unnumbered}
 
 ```{r S2_1, include=TRUE, echo=FALSE, fig.cap="Cognitive ability balance before and after weighting"}
 
@@ -4461,9 +4213,6 @@ include_graphics("Figure_s2_1.png")
 
 ```
 
-<!--chapter:end:supplement2.Rmd-->
-
-# Supplement 3 {#Supplement-3 .unnumbered}
 
 ```{r S3_1, include=TRUE, echo=FALSE, fig.cap="Destination class inequalities in outcomes by school system and cohort"}
 readRDS("superfig3b.RDS") %>%
@@ -4496,9 +4245,6 @@ readRDS("superfig4b.RDS") %>%
 include_graphics("Figures3_4.png")
 ```
 
-<!--chapter:end:supplement3.Rmd-->
-
-# Supplement 4 Analysis repeated using imputed outcomes {#Supplement-4-Analysis-repeated-using-imputed-outcomes .unnumbered}
 
 ```{r s4_1, include=TRUE, echo=FALSE, fig.cap="Mean outcomes by school system and cohort"}
 readRDS("superIMPOUTfig2.RDS") %>%
@@ -4512,9 +4258,7 @@ readRDS("superIMPOUTfig3a.RDS") %>%
 include_graphics("Figures4_2.png")
 ```
 
-<!--chapter:end:supplement4.Rmd-->
 
-# Supplement 5 Analysis repeated using entropy balancing {#Supplement-5-Analysis-repeated-using-entropy-balancing .unnumbered}
 
 ```{r Tables5_1, eval=TRUE, echo=FALSE, include=TRUE, tab.cap="Confounder balance before and after weighting"}
 
@@ -4554,9 +4298,7 @@ readRDS("ebalfig6a.RDS") %>%
 include_graphics("Figure5_5.png")
 ```
 
-<!--chapter:end:supplement5.Rmd-->
 
-# Supplement 6 Analysis repeated using gbm {#Supplement-6-Analysis-repeated-using-gbm .unnumbered}
 
 ```{r Tables6_1, eval=TRUE, echo=FALSE, include=TRUE, tab.cap="Confounder balance before and after weighting"}
 
@@ -4596,9 +4338,7 @@ readRDS("gbmfig6a.RDS") %>%
 include_graphics("Figure6_5.png")
 ```
 
-<!--chapter:end:supplement6.Rmd-->
 
-# Supplement 7 Analysis repeated with no imputed exposures {#Supplement-7-Analysis-repeated-with-no-imputed-exposures .unnumbered}
 
 ```{r s7_1, include=TRUE, echo=FALSE, fig.cap="Mean outcomes by school system and cohort"}
 readRDS("superNOIMPEXfig2.RDS") %>%
@@ -4612,9 +4352,7 @@ readRDS("superNOIMPEXfig3a.RDS") %>%
 include_graphics("Figures7_2.png")
 ```
 
-<!--chapter:end:supplement7.Rmd-->
 
-# Supplement 8 Analysis repeated with 1958 school type being at 11 rather than 16 {#Analysis-repeated-with-1958-school-type-being-at-11-rather-than-16 .unnumbered}
 
 ```{r s8_1, include=TRUE, echo=FALSE, fig.cap="Mean outcomes by school system and cohort"}
 readRDS("superSYS11fig2.RDS") %>%
@@ -4628,9 +4366,6 @@ readRDS("superSYS11fig3a.RDS") %>%
 include_graphics("Figures8_2.png")
 ```
 
-<!--chapter:end:supplement8.Rmd-->
-
-# Supplement 9 R packages {#Supplement-9-R-packages .unnumbered}
 
 
 
@@ -4646,5 +4381,4 @@ print(citation("WeightIt"), style="textVersion")
 ```
 
 
-<!--chapter:end:supplement9.Rmd-->
 
